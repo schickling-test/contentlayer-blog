@@ -1,4 +1,4 @@
-import { getDocuments } from '@contentlayer/client'
+import { getDocuments } from 'contentlayer/client'
 import { post } from 'contentlayer/types'
 import { compareDesc } from 'date-fns'
 import Head from 'next/head'
