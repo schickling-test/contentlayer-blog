@@ -8,6 +8,15 @@ import { FormattedDate } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
 const utilStyles = require('../styles/utils.module.css')
 
+export async function getStaticProps() {
+  const allPostsData = getDocuments().sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+  return {
+    props: {
+      allPostsData,
+    },
+  }
+}
+
 const Home: FC<{ allPostsData: post[] }> = ({ allPostsData }) => {
   return (
     <Layout home>
@@ -45,12 +54,3 @@ const Home: FC<{ allPostsData: post[] }> = ({ allPostsData }) => {
 }
 
 export default Home
-
-export async function getStaticProps() {
-  const allPostsData = getDocuments().sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-  return {
-    props: {
-      allPostsData,
-    },
-  }
-}
