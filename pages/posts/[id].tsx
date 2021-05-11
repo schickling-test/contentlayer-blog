@@ -34,7 +34,7 @@ const Page: FC<{ post: post }> = ({ post }) => {
         <div className={utilStyles.lightText}>
           <FormattedDate dateString={post.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.contentHTML }} />
+        <div dangerouslySetInnerHTML={{ __html: post.content.html }} />
       </article>
     </Layout>
   )
