@@ -19,9 +19,9 @@ export const post = defineDocument(() => ({
       required: true,
     },
   },
-  computedFields: (defineField) => [
-    defineField({ name: 'slug', type: 'string', resolve: (_) => _._id.replace('.md', '') }),
-  ],
+  computedFields: {
+    slug: { type: 'string', resolve: (_) => _._id.replace('.md', '') },
+  },
 }))
 
 export default defineConfig({
