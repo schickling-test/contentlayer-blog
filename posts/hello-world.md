@@ -1,7 +1,8 @@
 ---
 title: lorem-ipsum
 date: '2021-05-11'
-content: >-
+content:
+---
   ## Lorem ipsum
 
 
@@ -12,4 +13,3 @@ content: >-
   - Lorem ipsum
 
   - dolor sit amet
----
