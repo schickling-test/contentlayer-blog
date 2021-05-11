@@ -24,4 +24,3 @@ models:
         label: Markdown content
         type: markdown
     type: page
-nodeVersion: '>=12'
