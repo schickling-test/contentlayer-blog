@@ -24,4 +24,5 @@ models:
         description: Default markdown file content
         label: Markdown content
         type: markdown
+        hidden: true
     type: page
