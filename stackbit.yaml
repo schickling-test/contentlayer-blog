@@ -3,7 +3,7 @@
 stackbitVersion: ~0.3.0
 ssgName: nextjs
 nodeVersion: '14'
-devCommand: yarn dev -p 
+devCommand: yarn dev -p {PORT}
 publishDir: out
 pagesDir: posts
 models:
