@@ -10,7 +10,6 @@ models:
   post:
     label: Post
     match: '*'
-    hideContent: true
     fields:
       - name: title
         required: true
