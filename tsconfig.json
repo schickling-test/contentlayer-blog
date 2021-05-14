@@ -12,23 +12,12 @@
     "composite": false,
     "noEmit": true,
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "strict": false,
     "module": "esnext",
     "moduleResolution": "node",
     "isolatedModules": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.tsx",
-    "**/*.ts",
-    "./node_modules/@types"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.tsx", "**/*.ts", "./node_modules/.contentlayer/*", "./node_modules/@types"],
+  "exclude": ["node_modules"]
 }

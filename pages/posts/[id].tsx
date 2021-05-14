@@ -1,5 +1,4 @@
-import { getDocuments } from 'contentlayer/client'
-import { post } from 'contentlayer/types'
+import { allPost, Post } from '.contentlayer'
 import Head from 'next/head'
 import { FC } from 'react'
 import { FormattedDate } from '../../components/date'
@@ -7,7 +6,7 @@ import { Layout } from '../../components/layout'
 const utilStyles = require('../../styles/utils.module.css')
 
 export async function getStaticPaths() {
-  const paths = getDocuments().map((_) => '/posts/' + _.slug)
+  const paths = allPost.map((_) => '/posts/' + _.slug)
   return {
     paths,
     fallback: false,
@@ -15,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getDocuments().find((_) => _.slug === params.id)
+  const post = allPost.find((_) => _.slug === params.id)
   return {
     props: {
       post,
@@ -23,7 +22,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-const Page: FC<{ post: post }> = ({ post }) => {
+const Page: FC<{ post: Post }> = ({ post }) => {
   return (
     <Layout>
       <Head>

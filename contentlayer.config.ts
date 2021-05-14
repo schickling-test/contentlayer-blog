@@ -1,12 +1,9 @@
-import { defineConfig } from 'contentlayer/core'
-import { defineDocument, makeSourcePlugin } from 'contentlayer/source-local'
+import { defineDocument, fromLocalContent } from 'contentlayer/source-local'
 import * as path from 'path'
 
 export const post = defineDocument(() => ({
-  name: 'post',
-  label: 'Post',
+  name: 'Post',
   filePathPattern: `**/*.md`,
-  fileType: 'md',
   fields: {
     title: {
       type: 'string',
@@ -24,9 +21,7 @@ export const post = defineDocument(() => ({
   },
 }))
 
-export default defineConfig({
-  source: makeSourcePlugin({
-    documentDefs: [post],
-    contentDirPath: path.join(process.cwd(), 'posts'),
-  }),
+export default fromLocalContent({
+  contentDirPath: path.join(process.cwd(), 'posts'),
+  schema: [post],
 })

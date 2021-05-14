@@ -1,6 +1,6 @@
-import { getDocuments } from 'contentlayer/client'
-import { post } from 'contentlayer/types'
+import { allPost } from '.contentlayer'
 import { compareDesc } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -8,16 +8,15 @@ import { FormattedDate } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
 const utilStyles = require('../styles/utils.module.css')
 
-export async function getStaticProps() {
-  const allPostsData = getDocuments().sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+export async function getStaticProps({ params }) {
   return {
     props: {
-      allPostsData,
+      posts: allPost.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))),
     },
   }
 }
 
-const Home: FC<{ allPostsData: post[] }> = ({ allPostsData }) => {
+const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ posts }) => {
   return (
     <Layout home>
       <Head>
@@ -36,7 +35,7 @@ const Home: FC<{ allPostsData: post[] }> = ({ allPostsData }) => {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ slug, date, title }) => (
+          {posts.map(({ slug, date, title }) => (
             <li className={utilStyles.listItem} key={slug}>
               <Link href={`/posts/${slug}`}>
                 <a>{title}</a>
