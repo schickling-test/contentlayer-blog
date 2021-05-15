@@ -21,6 +21,6 @@ export const Post = defineDocument(() => ({
 }))
 
 export default fromLocalContent({
-  contentDirPath: './posts',
+  contentDirPath: 'posts',
   schema: [Post],
 })
