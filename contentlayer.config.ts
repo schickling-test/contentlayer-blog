@@ -1,5 +1,4 @@
 import { defineDocument, fromLocalContent } from 'contentlayer/source-local'
-import * as path from 'path'
 
 export const Post = defineDocument(() => ({
   name: 'Post',
@@ -22,6 +21,6 @@ export const Post = defineDocument(() => ({
 }))
 
 export default fromLocalContent({
-  contentDirPath: path.join(process.cwd(), 'posts'),
+  contentDirPath: './posts',
   schema: [Post],
 })
