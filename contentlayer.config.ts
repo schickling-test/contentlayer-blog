@@ -1,4 +1,5 @@
 import { defineDocument, fromLocalContent } from 'contentlayer/source-local'
+import highlight from 'rehype-highlight'
 
 export const Post = defineDocument(() => ({
   name: 'Post',
@@ -23,4 +24,5 @@ export const Post = defineDocument(() => ({
 export default fromLocalContent({
   contentDirPath: 'posts',
   schema: [Post],
+  markdown: { rehypePlugins: [highlight] },
 })
