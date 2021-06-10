@@ -3,12 +3,12 @@ import type { FC } from 'react'
 
 import { FormattedDate } from '../../components/date'
 import { Layout } from '../../components/layout'
-import { allPost } from '.contentlayer/data'
+import { allPosts } from '.contentlayer/data'
 import type { Post } from '.contentlayer/types'
 const utilStyles = require('../../styles/utils.module.css')
 
 export async function getStaticPaths() {
-  const paths = allPost.map((_) => '/posts/' + _.slug)
+  const paths = allPosts.map((_) => '/posts/' + _.slug)
   return {
     paths,
     fallback: false,
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = allPost.find((_) => _.slug === params.id)
+  const post = allPosts.find((_) => _.slug === params.id)
   return {
     props: {
       post,

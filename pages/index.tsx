@@ -6,13 +6,13 @@ import type { FC } from 'react'
 
 import { FormattedDate } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
-import { allPost } from '.contentlayer/data'
+import { allPosts } from '.contentlayer/data'
 const utilStyles = require('../styles/utils.module.css')
 
 export async function getStaticProps({ params }) {
   return {
     props: {
-      posts: allPost.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))),
+      posts: allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))),
     },
   }
 }

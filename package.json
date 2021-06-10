@@ -1,11 +1,10 @@
 {
-  "name": "my-app",
+  "name": "playground-starter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "_build": "contentlayer fetch && contentlayer generate && next build",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "gen:stackbit": "contentlayer-stackbit-yaml-generator"
   },
