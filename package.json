@@ -9,7 +9,6 @@
     "gen:stackbit": "contentlayer-stackbit-yaml-generator"
   },
   "dependencies": {
-    "contentlayer": "latest",
     "date-fns": "^2.22.1",
     "next": "^11.0.1",
     "react": "17.0.2",
@@ -18,6 +17,7 @@
   "devDependencies": {
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
+    "contentlayer": "latest",
     "contentlayer-stackbit-yaml-generator": "latest",
     "next-contentlayer": "latest",
     "rehype-highlight": "^4.1.0",

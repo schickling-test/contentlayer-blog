@@ -9,10 +9,12 @@ import { Layout, siteTitle } from '../components/layout'
 import { allPosts } from '.contentlayer/data'
 const utilStyles = require('../styles/utils.module.css')
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({}) => {
   return {
     props: {
-      posts: allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))),
+      posts: allPosts
+        .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+        .map((post) => ({ slug: post._raw.flattenedPath, title: post.title, date: post.date })),
     },
   }
 }

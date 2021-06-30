@@ -16,9 +16,6 @@ export const Post = defineDocument(() => ({
       required: true,
     },
   },
-  computedFields: {
-    slug: { type: 'string', resolve: (_) => _._id.replace('.md', '') },
-  },
 }))
 
 export default fromLocalContent({
