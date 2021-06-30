@@ -40,7 +40,7 @@ const Home: FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ posts }) => 
         <ul className={utilStyles.list}>
           {posts.map(({ slug, date, title }) => (
             <li className={utilStyles.listItem} key={slug}>
-              <Link href={slug}>
+              <Link href={`/posts/${slug}`}>
                 <a>{title}</a>
               </Link>
               <br />

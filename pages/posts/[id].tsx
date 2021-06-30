@@ -8,7 +8,7 @@ import type { Post } from '.contentlayer/types'
 const utilStyles = require('../../styles/utils.module.css')
 
 export async function getStaticPaths() {
-  const paths = allPosts.map((_) => '/posts/' + _.slug)
+  const paths = allPosts.map((_) => '/posts/' + _._raw.flattenedPath)
   return {
     paths,
     fallback: false,
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = allPosts.find((_) => _.slug === params.id)
+  const post = allPosts.find((_) => _._raw.flattenedPath === params.id)
   return {
     props: {
       post,
