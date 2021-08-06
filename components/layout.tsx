@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
+import type { FC } from 'react'
 const utilStyles = require('../styles/utils.module.css')
 const styles = require('./layout.module.css')
 

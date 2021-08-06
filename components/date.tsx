@@ -1,5 +1,5 @@
 import { format, parseISO } from 'date-fns'
-import { FC } from 'react'
+import type { FC } from 'react'
 
 export const FormattedDate: FC<{ dateString: string }> = ({ dateString }) => {
   const date = parseISO(dateString)

@@ -1,9 +1,8 @@
-import { defineDocument, fromLocalContent } from 'contentlayer/source-local'
+import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import highlight from 'rehype-highlight'
 
-export const Post = defineDocument(() => ({
+export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.md`,
   fields: {
     title: {
       type: 'string',
@@ -18,8 +17,8 @@ export const Post = defineDocument(() => ({
   },
 }))
 
-export default fromLocalContent({
+export default makeSource({
   contentDirPath: 'posts',
-  schema: [Post],
+  documentTypes: [Post],
   markdown: { rehypePlugins: [highlight] },
 })

@@ -1,5 +1,6 @@
 ---
-title: 'Two Forms of Pre-rendering 44'
+type: 'Post'
+title: 'Two Forms of Pre-rendering 48'
 date: '2020-01-01'
 ---
 
