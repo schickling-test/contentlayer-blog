@@ -1,6 +1,7 @@
 ---
 type: 'Post'
-title: 'Two Forms of Pre-rendering 48'
+title: 'Two Forms of Pre-rendering 49'
+someOtherField: hi
 date: '2020-01-01'
 ---
 
